@@ -1,0 +1,15 @@
+1.create database name exam
+2.enter to env file the dbname and username and password
+3.run command shell php artisan
+3.1->  php artisan make:auth
+       Authentication scaffolding generated successfully.
+3.2-> $ php artisan migrate
+        Migration table created successfully.
+
+4. php artisan make:migration make_initilizetablesplusmakeuser1112018
+   Created Migration: 2018_11_01_210947_make_initilizetablesplusmakeuser1112018
+
+
+
+
+
