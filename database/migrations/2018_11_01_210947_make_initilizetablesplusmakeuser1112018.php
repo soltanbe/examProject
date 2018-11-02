@@ -38,6 +38,26 @@ class MakeInitilizetablesplusmakeuser1112018 extends Migration
             $table->dateTime('created');
             $table->dateTime('edited');
         });
+        for($i=0;$i<100;$i++){
+            $datat[]=array(
+                'name' => 'soltan'.$i,
+                'height' => 111+$i,
+                'mass' => 100+$i,
+                'hair_color' => 'red',
+                'skin_color' => 'red',
+                'eye_color' => 'green',
+                'birth_year' => '1998',
+                'url' => 'dasdas.com',
+                'homeworld' => 'das',
+                'films' =>'das',
+                'vehicles' =>'das',
+                'starships' =>'dasd',
+                'species' =>'dasd',
+                'created' =>date('Y-m-d h:i:s'),
+                'edited' =>date('Y-m-d h:i:s'),
+            );
+        }
+        DB::table('people')->insert($datat);
         /*DB::statement("
       CREATE TABLE people (
             id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

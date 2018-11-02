@@ -10,10 +10,11 @@ use Illuminate\Support\Facades\DB;
 class HomeModel{
     public static function getPeopleList($data){
         $params=array();
+
+        $result=DB::select('SELECT count(1) as cnt FROM people',$params);
+        $res['total']=!empty($result[0]->cnt)?$result[0]->cnt:0;
         $params[]=$data['length'];
         $params[]=$data['start'];
-        $result=DB::select('SELECT count(1) as cnt FROM people LIMIT ? OFFSET ?',$params);
-        $res['total']=!empty($result[0]->total)?$result[0]->total:0;
         $res['rows']=DB::select('SELECT *  FROM people LIMIT ? OFFSET ?',$params);
         return $res;
 
