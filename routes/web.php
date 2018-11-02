@@ -14,8 +14,10 @@
 Route::get('/', function () {
     return view('home');
 });
-
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/getPeopleList', 'HomeController@getPeopleList');
+Route::get('/getPeopleList', 'HomeController@getPeopleList');
+Route::get('/deletePeopleFromList', 'HomeController@deletePeopleFromList');
+

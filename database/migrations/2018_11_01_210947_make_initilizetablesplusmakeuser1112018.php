@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
+
 class MakeInitilizetablesplusmakeuser1112018 extends Migration
 {
     /**
@@ -16,10 +17,10 @@ class MakeInitilizetablesplusmakeuser1112018 extends Migration
         DB::table('users')->insert([
             'name' => 'soltan',
             'email' => 'soltanbe@gmail.com',
-            'password' => encrypt('123456'),
+            'password' => bcrypt('123456'),
         ]);
 
-        Schema::create('flights', function (Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('height');
