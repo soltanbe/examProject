@@ -32,6 +32,7 @@
     </div>
     <script>
         $( document ).ready(function() {
+
             var table=$('#example').DataTable( {
                 "processing": true,
                 "serverSide": true,
@@ -39,7 +40,8 @@
                     method:'GET',
                     url:'getPeopleList'
                 },
-                "initComplete": function(settings, json) {
+                "drawCallback": function(settings, json) {
+
                     $('.people_click').on('click',function () {
 
                         $.ajax({
